@@ -1,0 +1,42 @@
+02 Truthy and Falsy
+
+자바스크립트 문법 까지는 아니지만, 알아둬야 하는 개념.
+
+Truthy: true 비슷한거, Falsy: false 비슷한거.
+
+function print(person) {
+  console.log(person.name);
+}
+
+const person = {
+  name: "John",
+};
+
+print(person);
+
+만약 이런 상황에서 print 함수가 파라미터가 비어진 채로 실행 됀다면?
+if () { return; } 형태로 없음을 출력할수 있음.
+
+이렇게 undefined 거나, null 인 상황을 대비하려면?
+
+if 의 조건에 !person 형태로 오류 처리.
+
+이게 작동하는 이유는, undefined 와 null 은 Falsy 한 값이다.
+Falsy 한 값 앞에 느낌표를 붙인다면 true 로 전환됨.
+
+console.log(!undefined);
+console.log(!null);
+console.log(!0);
+console.log(!"");
+console.log(!NaN);
+
+여기서 NaN 은 Not A Number 라는 의미.
+보통 NaN 은 문자열을 숫자로 변환하는 자바스크립트 기본함수 
+parseInt 라는 함수를 사용하게될때 볼수 있다.
+
+parseInt(string, n진수)
+
+나열한 5가지의 Falsy 값을 제외하고는 모두 Truthy 한값이다.
+
+만약 특정값이 Truthy 한 값이면 true, 그렇지 않으면 false 값 표현?
+
