@@ -1,0 +1,25 @@
+02 async/await
+
+async/await 문법은 ES8 에 해당하는 문법.
+Promise 를 더욱 쉽게 사용하도록 해줌.
+
+async/await 문법을 사용할땐, 함수를 선언할때 함수의 앞부분에
+async 키워드를 붙여준다. 그리고 Promise 앞부분에 await 을 넣어주면
+해당 프로미스가 끝날때까지 기다렸다가, 다음작업을 수행한다.
+
+위 코드에서는 sleep 이라는 함수를 만들어서 파라미터로 넣어준 시간만큼
+기다리는 Promise 를 만들고, 이를 process 함수에서 사용해줌.
+
+함수에서 async 를 사용하면, 해당 함수는 return값으로 Promise 를 반환.
+따라서 process().then() 과같이 다음 작업 이어줄수 있음.
+
+async 함수에서 에러발생시킬땐 throw 를 사용하고,
+에러를 잡아낼땐 try/catch 문을 사용.
+
+현재 getCat -> getRabbit -> getTurtle 순서로 연달아 실행.
+하나가 끝나야 다음 작업이 시작되는데 이것을 동시에 하려면?
+promise.all 을 사용 
+
+promise.all 을 사용할땐, 등록한 프로미스 중 하나라도 실패하면,
+모든게 실패한것으로 간주.
+
